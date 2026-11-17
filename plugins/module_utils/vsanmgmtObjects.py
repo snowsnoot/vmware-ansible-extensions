@@ -1,4 +1,9 @@
-from pyVmomi.VmomiSupport import CreateDataType, CreateManagedType, CreateEnumType, AddVersion, AddVersionParent, F_LINK, F_LINKABLE, F_OPTIONAL, F_SECRET, newestVersions, publicVersions
+from pyVmomi.VmomiSupport import CreateDataType, CreateManagedType, CreateEnumType, AddVersion, AddVersionParent, F_LINK, F_LINKABLE, F_OPTIONAL, F_SECRET, newestVersions
+
+if hasattr(VmomiSupport, 'publicVersions'):
+    from pyVmomi.VmomiSupport import publicVersions
+else:
+    publicVersions = getattr(VmomiSupport, 'versionMap', {})
 
 VSAN_INIT_VERSION = "vsan.version.version3"
 AddVersion("vsan.version.version3", "vsan", "6.6", ("vsan.version.version3" == VSAN_INIT_VERSION), "vsan")
