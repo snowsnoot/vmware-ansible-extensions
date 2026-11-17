@@ -105,9 +105,6 @@ def main():
 
     architecture = module.params['architecture'].lower()
 
-    if architecture == 'esa' and not HAS_VSAN_SDK:
-        module.fail_json(msg="VMware vSAN Management SDK (vsanapiutils) is required for vSAN ESA")
-
     global SI
     context = None
     requests.packages.urllib3.disable_warnings()
