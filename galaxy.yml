@@ -3,6 +3,7 @@ namespace: community
 name: vmware_ansible_extensions
 version: 0.1.0
 readme: README.md
+authors:
 description:
 license:
   - GPL-3.0-or-later
