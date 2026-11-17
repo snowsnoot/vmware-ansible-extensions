@@ -13,8 +13,8 @@ tags:
   - vmware
   - virtualization
 dependencies:
-  - community.vmware: 2.0.0
-  - vmware.vmware: ">=2.10.0"
+  community.vmware: 2.0.0
+  vmware.vmware: ">=2.10.0"
 repository: http://github.com/snowsnoot/vmware-ansible-extensions.git
 documentation: http://github.com/snowsnoot/vmware-ansible-extensions
 homepage: http://github.com/snowsnoot/vmware-ansible-extensions
