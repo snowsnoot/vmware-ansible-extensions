@@ -1,0 +1,20 @@
+---
+namespace: community
+name: vmware_ansible_extensions
+version: 0.1.0
+readme: README.md
+description:
+license:
+  - GPL-3.0-or-later
+  - BSD-2-Clause
+tags:
+  - cloud
+  - vmware
+  - virtualization
+dependencies:
+  - community.vmware: 2.0.0
+  - vmware.vmware: ">=2.10.0"
+repository: http://github.com/snowsnoot/vmware-ansible-extensions.git
+documentation: http://github.com/snowsnoot/vmware-ansible-extensions
+homepage: http://github.com/snowsnoot/vmware-ansible-extensions
+issues: http://github.com/snowsnoot/vmware-ansible-extensions/issues
