@@ -16,8 +16,8 @@ import time
 from pyVim import connect
 from pyVim.connect import SmartConnect, Disconnect
 from pyVmomi import vim, vmodl
-from ansible.module_utils.vsanmgmtObjects import *
-from ansible.module_utils.vsanapiutils import *
+from ansible_collections.community.vmware_ansible_extensions.plugins.module_utils.vsanapiutils import *
+from ansible_collections.community.vmware_ansible_extensions.plugins.module_utils.vsanmgmtObjects import *
 
    
 def wait_for_tasks(tasks, SI):
