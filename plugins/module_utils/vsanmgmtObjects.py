@@ -1,4 +1,5 @@
 from pyVmomi import VmomiSupport
+from pyVmomi.VmomiSupport import CreateDataType, CreateManagedType, CreateEnumType, AddVersion, AddVersionParent, F_LINK, F_LINKABLE, F_OPTIONAL, F_SECRET, newestVersions
 
 if hasattr(VmomiSupport, 'publicVersions'):
     from pyVmomi.VmomiSupport import publicVersions
