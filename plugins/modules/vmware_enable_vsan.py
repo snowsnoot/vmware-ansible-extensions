@@ -15,7 +15,9 @@ import ssl
 import time
 from pyVim import connect
 from pyVim.connect import SmartConnect, Disconnect
-from pyVmomi import vim, vmodl, vsanapiutils
+from pyVmomi import vim, vmodl
+from ansible.module_utils.vsanmgmtObjects import *
+from ansible.module_utils.vsanapiutils import *
 
    
 def wait_for_tasks(tasks, SI):

@@ -15,7 +15,10 @@ import ssl
 import time
 from pyVim import connect
 from pyVim.connect import SmartConnect
-from pyVmomi import vim, vmodl, vsanapiutils
+from pyVmomi import vim, vmodl
+from ansible.module_utils.vsanmgmtObjects import *
+from ansible.module_utils.vsanapiutils import *
+
 
 def connect_to_api(vchost, vc_user, vc_pwd):
     global service_instance
