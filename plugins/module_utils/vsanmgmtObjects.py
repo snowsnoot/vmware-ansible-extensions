@@ -1,10 +1,20 @@
 from pyVmomi import VmomiSupport
 from pyVmomi.VmomiSupport import CreateDataType, CreateManagedType, CreateEnumType, AddVersion, AddVersionParent, F_LINK, F_LINKABLE, F_OPTIONAL, F_SECRET, newestVersions
 
-if hasattr(VmomiSupport, 'publicVersions'):
-    from pyVmomi.VmomiSupport import publicVersions
-else:
-    publicVersions = getattr(VmomiSupport, 'versionMap', {})
+# Compatibility wrapper for modern pyvmomi where newestVersions/publicVersions are dicts lacking .Add()
+class _VersionMapCompat(dict):
+    def Add(self, version_str):
+        parts = version_str.split('.')
+        if len(parts) > 0:
+            self[parts[0]] = version_str
+
+    def GetName(self, namespace):
+        return self.get(namespace, f"{namespace}.version.version1")
+
+for _attr in ('newestVersions', 'publicVersions'):
+    _obj = getattr(VmomiSupport, _attr, None)
+    if _obj is not None and not hasattr(_obj, 'Add'):
+        setattr(VmomiSupport, _attr, _VersionMapCompat(_obj))
 
 VSAN_INIT_VERSION = "vsan.version.version3"
 AddVersion("vsan.version.version3", "vsan", "6.6", ("vsan.version.version3" == VSAN_INIT_VERSION), "vsan")
